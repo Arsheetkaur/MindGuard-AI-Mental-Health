@@ -23,3 +23,26 @@ function sendMessage() {
         chatBox.scrollTop = chatBox.scrollHeight;
     }, 800);
 }
+
+const ctx = document.getElementById('moodChart').getContext('2d');
+
+const moodChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+        datasets: [{
+            label: 'Mental Health Score',
+            data: [70, 65, 72, 68, 75],
+            borderWidth: 2,
+            fill: false
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                min: 0,
+                max: 100
+            }
+        }
+    }
+});
